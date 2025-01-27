@@ -1,0 +1,8 @@
+# Read about ignoring the node_modules here
+# https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+# https://www.w3schools.com/git/git_ignore.asp
+
+# Ignoring node_modules
+node_modules/
+
