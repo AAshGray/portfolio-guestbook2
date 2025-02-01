@@ -5,8 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guestbook</title>
     <link rel="icon" href="/images/book-open.ico">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
+<header></header>
 <body>
-    <p>Hello world!</p>
+    <form action="/submit" method="post">
+        <h1>Contact Form</h1>
+        <div>
+            <label>First Name <input type="text" name="fname"><label>
+            <label>Last Name <input type="text" name="lname"></label>
+            <label>Job Title <input type="text" name="jobtitle"></label>
+        </div>
+        <div>
+            <label>Company <input type="text" name="company"></label>
+            <label>LinkedIn URL <input type="text" name="linkedin"></label>
+            <label>Email Address <input type="text" name="email"></label>
+        </div>
+        <div>
+            <label>How did we meet? 
+                <select name="meet" id="meet">
+                    <option value="meetup">Meet up</option>
+                    <option value="jobfair">Job Fair</option>
+                    <option value="conference">Conference</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="seminar">Seminar</option>
+                </select>
+            </label>
+            <label>Other (please specify) 
+                <input type="text" name="other">
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" name="mailing_list" value="yes">
+                Please add me to your mailing list
+            </label>
+        </div>
+        <div>
+            <p>Choose an email format:</p>
+            <label>
+            <input type="radio" name="format" value="html" checked> HTML
+            </label>
+            
+            <label>
+            <input type="radio" name="format" value="text"> Text
+            </label>   
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </body>
+<footer></footer>
 </html>

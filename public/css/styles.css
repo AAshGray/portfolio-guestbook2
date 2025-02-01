@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 5px;
+}
+
+body {
+    
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif; 
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    width: 80%;
+    padding: 1em;
+    background-color: lightgray;
+}
+
+h1 {
+    text-align: center;
+}
+form {
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    align-content:space-around;
+}
+div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+label {
+    display: inline-block;
+    padding: 5px;
+    margin: 0px;
+}
+
+p {
+    display: inline;
+}
+
+button {
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 14px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 2px;
+}
