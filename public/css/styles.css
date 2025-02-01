@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem auto;
-    width: 80%;
+    width: 70%;
     padding: 1em;
     background-color: lightgray;
 }
@@ -23,13 +23,10 @@ form {
     background-color: white;
     padding: 20px;
     margin: 10px;
-    align-content:space-around;
 }
+
 div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    
+    padding: 10px;
 }
 
 label {
@@ -52,6 +49,9 @@ button {
     margin-bottom: 15px;
 }
 
-input {
-    padding: 2px;
+textarea {
+    display: block;
+    width: 500px;
+    height: 200px;
 }
+

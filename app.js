@@ -24,6 +24,7 @@ app.post('/submit', (req, res) => {
         email: req.body.email,
         meet: req.body.meet,
         other: req.body.other,
+        message: req.body.message,
         mailing_list: req.body.mailing_list,
         format: req.body.format,
         timestamp: new Date()
