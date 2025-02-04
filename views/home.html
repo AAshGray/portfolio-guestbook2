@@ -11,18 +11,39 @@
     <header></header>
     <form action="/submit" method="post">
         <h1>Contact Form</h1>
-        <div>
-            <label>First Name <input type="text" name="fname"></label>
-            <label>Last Name <input type="text" name="lname"></label>
-            <label>Job Title <input type="text" name="jobtitle"></label>
+        <div class="top">
+            <div class="flex3column">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname">
+                </div>
+                <div class="form-group">
+                    <label for="jobtitle" name="jobtitle">Job Title</label>
+                    <input type="text" name="jobtitle">
+                </div>
+            </div>
+            <div class="flex3column">
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" name="company"> 
+                </div>
+                <div class="form-group">
+                    <label for="link">LinkedIn URL</label>
+                    <input type="text" name="lname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="text" name="email">
+                </div>
+            </div>
         </div>
-        <div>
-            <label>Company <input type="text" name="company"></label>
-            <label>LinkedIn URL <input type="text" name="linkedin"></label>
-            <label>Email Address <input type="text" name="email"></label>
-        </div>
-        <div>
-            <label>How did we meet? 
+        <div class="flex2column">
+            <div class="form-group2">
+                <label for="meet">How did we meet?</label>
                 <select name="meet" id="meet">
                     <option value="meetup">Meet up</option>
                     <option value="jobfair">Job Fair</option>
@@ -30,29 +51,26 @@
                     <option value="workshop">Workshop</option>
                     <option value="seminar">Seminar</option>
                 </select>
-            </label>
-            <label>Other (please specify) 
+            </div>
+            <div class="form-group2">
+                <label for="other">Other (please specify)</label>
                 <input type="text" name="other">
-            </label>
+            </div>
         </div>
-        <div>
-            <label>Message <textarea name="message"></textarea></label>
-        </div>
-        <div>
-            <label>
+
+        <label for="message">Message</label><br>
+        <textarea name="message"></textarea>
+        
+        <div class="mailing-list">
                 <input type="checkbox" name="mailing_list" value="yes">
-                Please add me to your mailing list
-            </label>
+                <label for="checkbox">Please add me to your mailing list</label>
         </div>
-        <div>
-            <p>Choose an email format:</p>
-            <label>
-            <input type="radio" name="format" value="html" checked> HTML
-            </label>
-            
-            <label>
-            <input type="radio" name="format" value="text"> Text
-            </label>   
+        <div class="mail-format">
+            <label>Choose an email format:</label>
+            <label for="format">HTML</label>
+            <input type="radio" id="html" name="format" value="html" checked>
+            <label for="text">Text</label>   
+            <input type="radio" id="text" name="format" value="text">
         </div>
         <button type="submit">Submit</button>
     </form>
