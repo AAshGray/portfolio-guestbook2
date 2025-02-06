@@ -31,11 +31,28 @@ app.post('/submit', (req, res) => {
     };
 
 
+    const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confirmation</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <h1>Thank you for signing the guestbook, ${req.body.fname}!</h1>
+        <br>
+        <button id="confirmbutton" onclick="window.location.href='/'">Go to Home</button>
+    </body>
+    </html>`;
+
+    res.send(html);
+
     guestbook.push(page);
-    res.send(`<h1>Guestbook signed! Thank you ${req.body.fname}!</h1>`);
 });
 
-app.get('/guestbook', (req, res) => {
+app.get('/admin/guestbook', (req, res) => {
     res.send(guestbook);
 });
 
