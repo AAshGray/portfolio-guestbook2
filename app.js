@@ -30,7 +30,8 @@ app.post('/submit', (req, res) => {
         timestamp: new Date()
     };
 
-
+    //re-writing the HTML as javascript let me leave in the "thank you, <name>!" we did in class more easily
+    //copied the other HTML/body tags from /home for the CSS to apply more closely compared to the original
     const html = `
     <!DOCTYPE html>
     <html lang="en">
