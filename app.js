@@ -2,16 +2,18 @@ import express from 'express'
 
 const app = express();
 
-const guestbook = [];
+app.use(express.urlencoded( { extended: true }));
 
 app.use(express.static('public'));
 
-app.use(express.urlencoded( { extended: true }));
+app.set('view engine', 'ejs');
+
+const guestbook = [];
 
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render(`home`);
 });
 
 app.post('/submit', (req, res) => {
@@ -30,31 +32,14 @@ app.post('/submit', (req, res) => {
         timestamp: new Date()
     };
 
-    //re-writing the HTML as javascript let me leave in the "thank you, <name>!" we did in class more easily
-    //copied the other HTML/body tags from /home for the CSS to apply more closely compared to the original
-    const html = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Confirmation</title>
-        <link rel="stylesheet" href="/css/styles.css">
-    </head>
-    <body>
-        <h1>Thank you for signing the guestbook, ${req.body.fname}!</h1>
-        <br>
-        <button id="confirmbutton" onclick="window.location.href='/'">Go to Home</button>
-    </body>
-    </html>`;
-
-    res.send(html);
-
     guestbook.push(page);
+    console.log(page);
+
+    res.render('thank-you', { page });
 });
 
-app.get('/admin/guestbook', (req, res) => {
-    res.send(guestbook);
+app.get('/admin', (req, res) => {
+    res.render('admin', { guestbook });
 });
 
 
