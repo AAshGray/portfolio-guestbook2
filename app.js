@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/submit', (req, res) => {
+    function isValid(field) {
+        return field.trim() !== "";
+    }
+
     const page = {
         fname: req.body.fname,
         lname: req.body.lname,
@@ -31,6 +35,27 @@ app.post('/submit', (req, res) => {
         format: req.body.format,
         timestamp: new Date()
     };
+
+    if(!isValid(page.fname) || !isValid(page.lname) || !isValid(page.email)) {
+        const invalid = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Confirmation</title>
+            <link rel="stylesheet" href="/css/styles.css">
+        </head>
+        <body class="invalid">
+            <h1>Invalid Input!</h1><br>
+            <p>Return home and try again?</p><br>
+            <button id="confirmbutton" onclick="window.location.href='/'">Home</button>
+            <button id="confirmbutton" onclick="window.location.href='/admin'">Admin</button>
+        </body>
+        </html>`;
+        res.send(invalid);
+        return;
+    }
 
     guestbook.push(page);
     console.log(page);
