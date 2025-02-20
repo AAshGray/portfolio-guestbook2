@@ -18,7 +18,7 @@ body {
     width: 70%;
     margin: 1.5rem auto 1rem auto;
     padding: 1em;
-    border: gray;
+    border: 1px solid gray;
     border-radius: 10px;
 }
 
@@ -122,4 +122,21 @@ button {
 
 .invalid h1 {
     padding-bottom: 1em;
+}
+
+.admin {
+    background-color: white;
+}
+
+.guestbook-entry {
+    margin: 15px;
+    justify-content: flex-start;
+}
+
+.guestbook-entry hr {
+    margin-top: 10px;
+}
+
+.guestbook-entry p {
+    padding: 2px;
 }
