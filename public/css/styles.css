@@ -141,6 +141,6 @@ button {
     padding: 2px;
 }
 
-.thank-you {
-    padding: 11px;
+#thank-you h1, p{
+    padding: 8px;
 }
